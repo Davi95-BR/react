@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import CardNota from '../CardNota/CardNota';
-import './estilo.css'
+import CardNota from '../CardNota';
+import "./estilo.css"
 
 // -->  Componentes baseados em classes
-
 class ListaDeNotas extends Component {
     render() {
         return (
@@ -11,7 +10,6 @@ class ListaDeNotas extends Component {
                 {Array.of("Trabalho", "Lazer", "Estudos").map(index => {
                     return (
                         <li className="lista-notas__item" key={index}>
-
                             <CardNota />
                         </li>
                     );
