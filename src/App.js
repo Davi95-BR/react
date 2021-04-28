@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import FormularioCadastro from "./componentes/FormularioCadastro.jsx";
-import ListaDeNotas from "./componentes/ListaDeNotas.jsx";
+import FormularioCadastro from "./componentes/FormularioCadastro/FormularioCadastro.jsx";
+import ListaDeNotas from "./componentes/ListaDeNotas/ListaDeNotas.jsx";
 
 class App extends Component {
   render() {
