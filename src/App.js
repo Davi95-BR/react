@@ -6,14 +6,24 @@ import "./assets/App.css"
 
 class App extends Component {
 
-  criarNota(titulo, texto) {
-    console.log('uma nova nota foi criada' + " " + titulo + " " + texto);
+  constructor(){
+    super();
+
+    this.state = { notas:[] }
   }
+
+  criarNota(titulo, texto) {
+    const novaNota = {titulo, texto};                        // Criar objeto
+    const novoArrayNotas = [...this.state.notas,novaNota]   // Criar array
+    const novoEstado = { notas:novoArrayNotas }            //  Fazer um novo estado
+    this.setState(novoEstado)                             
+  }
+
   render() {
     return (
       <section className="conteudo">
-        <FormularioCadastro  criarNota={this.criarNota}/>
-        <ListaDeNotas />
+        <FormularioCadastro  criarNota={this.criarNota.bind(this)}/>
+        <ListaDeNotas notas={this.state.notas}/>
       </section>
     );
   }
