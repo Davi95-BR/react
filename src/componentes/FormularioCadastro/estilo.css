@@ -8,15 +8,6 @@
     padding: 12px 40px;
   }
   
-  .form-cadstro__button {
-    flex-grow: 2;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: row;
-    padding: 12px 40px;
-  }
   .form-cadastro__input {
     margin-top: 8px;
     padding: 4px;
