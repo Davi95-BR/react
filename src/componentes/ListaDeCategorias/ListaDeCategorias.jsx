@@ -1,27 +1,29 @@
 import React, { Component } from "react";
-import "./estilo.css"
-
+import "./estilo.css";
 class ListaDeCategorias extends Component {
-
-    _handlerEventoInput(e) {
-        if(e.key == "Enter"){
-            console.log("adiconar categoria")
+    _handleEventoInput(e) {
+        if (e.key === "Enter") {
+            let valorCategoria = e.target.value;
+            this.props.adicionarCategoria(valorCategoria);
         }
     }
-
     render() {
         return (
             <section className="lista-categorias">
                 <input
-                    className="lista-categorias__input" type="text"
-                    placeholder="Adicionar categoria"
-                    onKeyUp={this._handlerEventoInput.bind(this)}
+                    type="text"
+                    className="lista-categorias__input"
+                    placeholder="Adicionar Categoria"
+                    onKeyUp={this._handleEventoInput.bind(this)}
                 />
                 <ul className="lista-categorias__lista">
-                    <li className="lista-categorias__item" >Categorias</li>
-                    <li className="lista-categorias__item">Categorias</li>
-                    <li className="lista-categorias__item">Categorias</li>
-                    <li className="lista-categorias__item">Categorias</li>
+                    {this.props.categorias.map((categoria, index) => {
+                        return (
+                            <li key={index} className="lista-categorias__item">
+                                {categoria}
+                            </li>
+                        );
+                    })}
                 </ul>
             </section>
         );
@@ -29,3 +31,5 @@ class ListaDeCategorias extends Component {
 }
 
 export default ListaDeCategorias;
+
+

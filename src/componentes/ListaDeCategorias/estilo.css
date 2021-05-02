@@ -1,21 +1,25 @@
 .lista-categorias__lista {
     display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-evenly;
 
     margin-top: 3rem;
 }
 
 .lista-categorias__item {
-    padding: 10px;
-	margin-bottom: 10px;
-	color: #9799A6;
+
 	background-color: #FFF;
+	border-bottom: 1px solid #9799A6;
+	box-shadow: 2px 2px 2px #CCC;
+	border-radius: 10px;
+
+	color: #9799A6;
+	display: block;
 	text-decoration: none;
 	transition: .1s;
-	display: block;
-	border-bottom: 1px solid #9799A6;
-    box-shadow: 2px 2px 2px #CCC;
+	
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .lista-categorias__item:hover {
