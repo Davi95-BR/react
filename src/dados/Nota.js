@@ -1,6 +1,7 @@
 class ArrayDeNotas {
     constructor(){
         this.notas = [];
+        this._inscritos = [];
 
     }
 
@@ -11,6 +12,16 @@ class ArrayDeNotas {
 
     apagarNota(indice){
         this.notas.splice(indice, 1);
+    }
+
+    inscrever(func){
+        this._inscritos.push(func);
+    }
+
+    notificar(){
+        this._inscritos.forEach(func => {
+            func(this.categorias)
+        });
     }
 }
 
